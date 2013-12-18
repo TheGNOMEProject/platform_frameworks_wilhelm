@@ -111,8 +111,8 @@ forward_progress:
                     pOwner, ownerTid, thiz->mFile, thiz->mLine);
         } else {
             SL_LOGE("%s:%d: pthread %p (tid %d) sees object %p was left unlocked in unexpected"
-                    " state by pthread %p (tid %d) at %s:%d\n", file, line, *(void **)&me, gettid(),
-                    thiz, *(void **)&owner, ownerTid, thiz->mFile, thiz->mLine);
+                    " state by pthread %p (tid %d) at %s:%d\n", file, line, pMe, gettid(),
+                    thiz, pOwner, ownerTid, thiz->mFile, thiz->mLine);
         }
         assert(false);
     }
